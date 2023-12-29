@@ -10,11 +10,13 @@ html {
 
 .page {
   display: flex;
+  justify-content: center;
+  align-items: end;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -41,7 +43,7 @@ ol {
 .content {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   gap: 30px;
   justify-self: center;
   align-self: center;
@@ -51,49 +53,55 @@ ol {
 .result__video-container {
   display: flex;
   position: relative;
-  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-  margin-top: 78px;
 }
 
 .result__video {
   width: 711px;
+  height: 386px;
+}
+
+.result {
+  align-self: end;
 }
 
 .search-form {
-display: flex;
-justify-content: space-between;
-padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
 }
 
 .search-form__fieldset {
-border: none;
+  border: none;
+  gap: 5px;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .search-form__fieldset-title {
-  color: #FFF;
-font-family: Fira Sans Condensed;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: #fff;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .search-form__label {
   width: fit-content;
   cursor: pointer;
   align-items: center;
-  display: inline-flex; 
+  display: inline-flex;
 }
 
 .search-form__label-text {
-  color: #FFF;
-font-family: Fira Sans Condensed;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-appearance: none;
-margin-left: 5px;
+  color: #fff;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  appearance: none;
+  margin-left: 5px;
 }
 
 .visually-hidden {
@@ -113,21 +121,16 @@ input {
 
 input {
   border: none;
-  font-family: inherit; 
+  font-family: inherit;
   color: inherit;
   display: flex;
   width: 225px;
   height: 27px;
   align-items: center;
   gap: 10px;
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   background-color: transparent;
-  margin-top: 5px;
-}
-
-input:hover {
-  cursor: pointer;
 }
 
 input:active {
@@ -138,17 +141,9 @@ input:focus {
   outline: none;
 }
 
-input:focus-visible {
-  border: 1px solid #FFF;
-}
-
 .search-form__textfield {
-  color: rgba(255, 255, 255, 0.70);
-  font-family: Fira Sans Condensed;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .search-form__checkbox-list {
@@ -157,15 +152,11 @@ input:focus-visible {
   gap: 15px;
 }
 
-.search-form__checkbox {
-  
-}
-
 .search-form__pseudo-checkbox {
   display: inline-flex;
   width: 19px;
   height: 19px;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   position: relative;
 }
 
@@ -186,17 +177,14 @@ input:focus-visible {
   opacity: 1;
 }
 
-.search-form__label:hover {
-text-decoration-line: underline;
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
-.search-form__label:focus {
-  outline: none;
-  }
-  
-.search-form__label:focus-visible {
-  border: 1px solid #FFF;
-  }
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
 
 .button {
   cursor: pointer;
@@ -205,10 +193,10 @@ text-decoration-line: underline;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  border: 1px solid #FFF;
-  color: #FFF;
+  border: 1px solid #fff;
+  color: #fff;
   text-align: center;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -229,12 +217,13 @@ button:focus {
 }
 
 button:focus-visible {
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
 }
 
 .search-form__submit-button {
+  display: flex;
   position: relative;
-  top: 20px;
+  align-self: flex-end;
   width: 194px;
   height: 34px;
 }
@@ -249,8 +238,7 @@ button:focus-visible {
 .title {
   display: inline-block;
   min-width: 260px;
-  min-height: 210px;
-  color: #FFF;
+  color: #fff;
   font-family: Oswald;
   font-size: 75px;
   font-style: normal;
@@ -275,11 +263,17 @@ button:focus-visible {
 }
 
 .content__list-item:not(:last-child) {
-margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .content__card-link {
-  text-decoration:none;
+  display: block;
+  text-decoration: none;
+  margin: 2px;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -287,23 +281,24 @@ margin-bottom: 30px;
   padding: 2px;
   align-items: flex-start;
   justify-content: space-between;
+  /* width: 398px; */
 }
 
-.content__video-card:hover {
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
   text-decoration-line: underline;
   color: #fff;
 }
 
-.content__video-card:active {
-  background: #545050;
-}
-
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__video-card:focus-visible {
-  border: 1px solid #FFF;
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
 }
 
 .content__video-card-description-container {
@@ -316,18 +311,22 @@ margin-bottom: 30px;
 }
 
 .content__video-card-title {
-  color: #FFF;
-  font-family: Oswald;
+  color: #fff;
+  font-family: Oswald, Arial, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 30px */
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__video-card-description {
-  color: #FFF;
-  font-family: Fira Sans Condensed;
+  color: #fff;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -338,15 +337,11 @@ margin-bottom: 30px;
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .more-button {
-  border: 1px solid #FFF;
-  display: flex;
   width: 399px;
   height: 34px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
 }
